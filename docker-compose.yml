@@ -1,0 +1,23 @@
+version: '3.5'
+
+services: 
+  test-predictions:
+    #este hace referencia al nombre del contenedor
+    container_name: test-predictions
+    #esto hacer referencia al tag ej: docker build . -t docker-prueba 
+    image: test-predict:0.0.2
+    #este build es el mismo que cuando hacemos docker build . y su contexto 
+    build:
+     context: ./
+     dockerfile: ./Dockerfile
+    ports: 
+    #5001 del host, 500 del contenedor
+      - "5001:5000"
+    volumes:
+      - ./templates:/app/templates
+    command: python app.py
+    #privileged: true 
+    #me permite acceder a distintos puertos, puedo enviar señales logicas 
+    #restart:always
+    #depende del docker, me permite que el sistema se levante cada vez que se encienda la tarjeta, va a iniciar los servicios solos
+    

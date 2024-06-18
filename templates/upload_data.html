@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}
+Load Data
+{% endblock %}
+
+{% block content %}
+<style>
+    .test {
+        width: 100%;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        font-family: 'Roboto', Helvetica, sans-serif;
+    }
+
+    .my-form {
+
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: white;
+        min-height: 30%;
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 6px 0 rgba(79, 67, 56, 0.15);
+    }
+
+    .container-div {
+        margin-top: 1rem;
+        background-color: rgba(0,0,0,0.1);
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        /* width: 100%; */
+        padding: 12px 30px 12px 25px;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        border-style: none;
+        border-width: 1px;
+        border-color: #e7e7e7;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px 0 rgba(79, 67, 56, 0.15);
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        text-decoration: none;
+    }
+</style>
+<div class="test">
+
+    <h1></h1>
+    <br>
+    <form class="my-form" action="" method="post" enctype="multipart/form-data">
+        <h1 style="margin-bottom: 0;">Load data to make predictions </h1>
+        <p>
+            Select a CSV file.
+        </p>
+        <div class="container-div">
+            <label for="fileUpload" class="btn btn-primary btn-block btn-outlined" style="
+            margin-right: 16px;">
+                Select File
+            </label>
+            <input type="file" name="fileUpload" id="fileUpload" accept=".csv">
+            <input type="submit" value="Load"
+                style="
+            display: inline-block;
+            /* margin-top: 10px; */
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            background-color: #0483bb;
+            color: white;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+        </div>
+
+    </form>
+</div>
+{% endblock %}
